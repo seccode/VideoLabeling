@@ -1,0 +1,6 @@
+# Ignore images and video
+*.jpg
+*.mp4
+*.png
+*.jpeg
+
