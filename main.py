@@ -12,7 +12,6 @@ waitKeys that will represent other classes
 parser = argparse.ArgumentParser(description='Input args')
 parser.add_argument('--video',dest='video',help='Path to input video')
 parser.add_argument('--classes',dest='classes',type=str,help='Names of classes')
-parser.add_argument('--delay',dest='delay',default=0.1,type=float,help='time delay between frames')
 
 args = parser.parse_args()
 class_1 = args.classes.split(',')[0]
@@ -39,9 +38,9 @@ while True:
 		break
 	elif key == ord('1'):
 		# Class 1 label
-		cv2.imwrite(class_1+'/'+class_1+'_'+str(pic_count)+'.jpg',frame)
+		cv2.imwrite(class_1+'/'+class_1+video_path.split('/')[-1].split('.')[0]+'_'+str(pic_count)+'.jpg',frame)
 		pic_count += 1
 	elif key == ord('2'):
 		# Class 2 label
-		cv2.imwrite(class_2+'/'+class_2+'_'+str(pic_count)+'.jpg',frame)
+		cv2.imwrite(class_2+'/'+class_2+video_path.split('/')[-1].split('.')[0]+'_'+str(pic_count)+'.jpg',frame)
 		pic_count += 1
