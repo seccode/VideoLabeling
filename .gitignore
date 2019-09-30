@@ -4,3 +4,7 @@
 *.png
 *.jpeg
 
+# Ignore local class folders
+*attentive/
+*inattentive/
+

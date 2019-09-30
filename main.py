@@ -1,7 +1,6 @@
 import cv2
 import argparse
 import os
-import numpy as np
 import time
 '''
 This script is meant for labeling of data with two classes.
@@ -33,14 +32,17 @@ while True:
 	if not ret:
 		break
 	cv2.imshow('frame',frame)
-	key = cv2.waitKey(0)
+	time.sleep(.1)
+	key = cv2.waitKey(1)
 	if key == 27: # Break on esc key
 		break
 	elif key == ord('1'):
 		# Class 1 label
-		cv2.imwrite(class_1+'/'+class_1+video_path.split('/')[-1].split('.')[0]+'_'+str(pic_count)+'.jpg',frame)
+		cv2.imwrite(class_1+'/'+class_1+'_'+video_path.split('/')[-1].split('.')[0]+'_'+str(pic_count)+'.jpg',frame)
 		pic_count += 1
+		continue
 	elif key == ord('2'):
 		# Class 2 label
-		cv2.imwrite(class_2+'/'+class_2+video_path.split('/')[-1].split('.')[0]+'_'+str(pic_count)+'.jpg',frame)
+		cv2.imwrite(class_2+'/'+class_2+'_'+video_path.split('/')[-1].split('.')[0]+'_'+str(pic_count)+'.jpg',frame)
 		pic_count += 1
+		continue
